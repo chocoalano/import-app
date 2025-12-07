@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
             ['email' => 'test@example.com'],
             [
                 'name' => 'Test User',
-                'nik' => '46064',
+                'nik' => '1234567890123456', // 16 digit NIK
                 'password' => 'password',
                 'email_verified_at' => now(),
             ]

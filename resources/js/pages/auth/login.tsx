@@ -25,7 +25,7 @@ export default function Login({
     return (
         <AuthLayout
             title="Log in to your account"
-            description="Enter your email and password below to log in"
+            description="Enter your NIK and password below to log in"
         >
             <Head title="Log in" />
 
@@ -38,18 +38,20 @@ export default function Login({
                     <>
                         <div className="grid gap-6">
                             <div className="grid gap-2">
-                                <Label htmlFor="email">Email</Label>
+                                <Label htmlFor="nik">NIK (Nomor Induk Kependudukan)</Label>
                                 <Input
-                                    id="email"
+                                    id="nik"
                                     type="text"
-                                    name="email"
+                                    name="nik"
                                     required
                                     autoFocus
                                     tabIndex={1}
                                     autoComplete="username"
-                                    placeholder="Input Email"
+                                    placeholder="Masukkan NIK Anda"
+                                    maxLength={16}
+                                    pattern="[0-9]{5,8}"
                                 />
-                                <InputError message={errors.email} />
+                                <InputError message={errors.nik} />
                             </div>
 
                             <div className="grid gap-2">

@@ -59,12 +59,28 @@ export default function Register() {
                             </div>
 
                             <div className="grid gap-2">
+                                <Label htmlFor="nik">NIK (Nomor Induk Kependudukan)</Label>
+                                <Input
+                                    id="nik"
+                                    type="text"
+                                    required
+                                    tabIndex={3}
+                                    autoComplete="off"
+                                    name="nik"
+                                    placeholder="Masukkan 16 digit NIK"
+                                    maxLength={16}
+                                    pattern="[0-9]{16}"
+                                />
+                                <InputError message={errors.nik} />
+                            </div>
+
+                            <div className="grid gap-2">
                                 <Label htmlFor="password">Password</Label>
                                 <Input
                                     id="password"
                                     type="password"
                                     required
-                                    tabIndex={3}
+                                    tabIndex={4}
                                     autoComplete="new-password"
                                     name="password"
                                     placeholder="Password"
@@ -80,7 +96,7 @@ export default function Register() {
                                     id="password_confirmation"
                                     type="password"
                                     required
-                                    tabIndex={4}
+                                    tabIndex={5}
                                     autoComplete="new-password"
                                     name="password_confirmation"
                                     placeholder="Confirm password"
@@ -93,7 +109,7 @@ export default function Register() {
                             <Button
                                 type="submit"
                                 className="mt-2 w-full"
-                                tabIndex={5}
+                                tabIndex={6}
                                 data-test="register-user-button"
                             >
                                 {processing && <Spinner />}
