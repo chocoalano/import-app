@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GlobeController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Laravel\Fortify\Features;
@@ -9,6 +10,10 @@ Route::get('/', function () {
         'canRegister' => Features::enabled(Features::registration()),
     ]);
 })->name('home');
+Route::get('/belajar', function () {
+    return Inertia::render('belajar');
+})->name('belajar');
+Route::get('/geo', [GlobeController::class, 'index'])->name('geo');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', function () {
